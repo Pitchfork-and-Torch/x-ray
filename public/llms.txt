@@ -1,0 +1,61 @@
+# X-Ray
+> World-anchored spatial X feed over live camera. Privacy-first mixed reality for phone, tablet, and desktop.
+
+- Version: 3.1.0
+- Codename: Across Devices
+- Live: https://x-ray.jonbailey.xyz/
+- Signaling: https://xray-signal.jonbailey.xyz/
+- Original experimental app: https://x-ray.grok.me/
+- Concept: @suddenlyjon
+- Network host: Pitchfork-and-Torch / jonbailey.xyz
+- License: MIT
+- Source: https://github.com/Pitchfork-and-Torch/x-ray
+
+## One-liner
+Point your camera, lock a depth-stacked social feed into the room, capture stills or short Moments - video and screenshots never leave the device.
+
+## What it does
+- Anchored Reality: device orientation locks posts in physical space (graceful scroll/pointer fallback)
+- Live camera passthrough with glass post cards at near / mid / far depth
+- Demo Reality ambient mode when camera is denied or for quick try
+- Re-anchor control to reset world origin
+- Walk-safe chrome hides controls while scrolling
+- Multi-handle vectors and Shared Reality data-channel rooms across devices (no camera share)
+- On-device insight bubbles; optional client-side xAI key for richer insights
+- Local gallery in IndexedDB (stills + Moments); download / Web Share API
+- Ambient lighting tint from camera average color
+- i18n: EN (locale fan-out paused)
+- PWA manifest + service worker for installable shell
+
+## Privacy
+- Camera streams via getUserMedia stay in the tab
+- Motion sensors processed on-device only
+- Captures stored only in IndexedDB / download
+- Shared Reality exchanges SDP, ICE, handles, anchors, reactions only
+- Signaling worker TTL 2 hours; never stores video
+- No server upload of video or photos from this static host
+
+## Deep links
+- `/?demo=1` - open Demo Reality
+- `/?xray=1` - open stage (requests live camera)
+- `/?room=CODE` - join Shared Reality room
+- `/?room=@a,@b` - open with vector handles
+- `/?lock=0` - force scroll depth mode
+- `/?whatsnew=1` - open What's new
+
+## FAQ
+Q: Does video leave my phone?
+A: No. Nothing is uploaded by this site.
+
+Q: Why motion sensors?
+A: So posts stay fixed in the room as you turn. Data never leaves the device. Scroll depth works without sensors.
+
+Q: Relation to x-ray.grok.me?
+A: x-ray.jonbailey.xyz is the upgraded Anchored Reality network host. x-ray.grok.me remains the original experimental SPA.
+
+Q: Do Shared Reality rooms work across phones?
+A: Yes in v3.1 via https://xray-signal.jonbailey.xyz/ (SDP/ICE only). Same-tab rooms still work without the worker.
+
+## Related
+- https://jonbailey.xyz/
+- https://x.com/suddenlyjon

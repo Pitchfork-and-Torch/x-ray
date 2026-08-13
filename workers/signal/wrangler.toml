@@ -1,0 +1,12 @@
+name = "xray-signal"
+main = "src/index.js"
+compatibility_date = "2026-08-28"
+workers_dev = true
+
+[[routes]]
+pattern = "xray-signal.jonbailey.xyz"
+custom_domain = true
+
+[[kv_namespaces]]
+binding = "ROOMS"
+id = "cb01e60dc80f40d4a436e318c9771fa9"
