@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.1.1 - Honesty pass (2026-09-01)
+
+- Versions, README, PWA, and AEO/privacy copy match the shipped on-device app
+- Copy no longer claims a live X feed, Shared Reality anchor/reaction sync, or "no telemetry"
+- Privacy text lists what is not uploaded (camera, photos, motion) and the optional paths that can leave the browser
+- Restored missing `applyLocale` export so the ES module graph boots
+- Removed dead ES/PT/JA switcher (EN-only while i18n is paused)
+- Footer version rot (`v3.0.1`) fixed; PWA cache bumped to 3.1.1
+
 ## 3.1.0 - Across Devices (2026-08-28)
 
 - Live Cloudflare Worker signaling at https://xray-signal.jonbailey.xyz/

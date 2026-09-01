@@ -1,11 +1,11 @@
 /* X-Ray offline shell - static assets only, never camera data.
    Network-first for HTML + app JS so broken deploys cannot stick in cache. */
-const CACHE = "xray-v3.1.0";
+const CACHE = "xray-v3.1.1";
 const PRECACHE = [
   "/",
   "/index.html",
-  "/assets/styles.css?v=3.1.0",
-  "/assets/app/main-v302.js?v=3.1.0",
+  "/assets/styles.css?v=3.1.1",
+  "/assets/app/main-v302.js?v=3.1.1",
   "/manifest.webmanifest",
   "/icon-192.png",
   "/icon-512.png",

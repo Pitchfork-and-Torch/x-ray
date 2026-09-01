@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>X-Ray v3.1 - Across Devices</title>
-  <meta name="description" content="Anchored Reality: spatial X feed locked into the room over live camera. Shared Reality now works across phones. Demo Reality, on-device insights, local gallery. Camera never leaves your device." />
+  <title>X-Ray 3.1.1 - Across Devices</title>
+  <meta name="description" content="Spatial posts over live camera, on this device. Cards lock into the room. Demo Reality, Shared Reality rooms, on-device insights, local gallery. Camera frames are not uploaded." />
   <meta name="theme-color" content="#000000" />
   <meta name="color-scheme" content="dark" />
   <meta name="mobile-web-app-capable" content="yes" />
@@ -20,27 +20,27 @@
   <meta property="og:url" content="https://x-ray.jonbailey.xyz/" />
   <meta property="og:site_name" content="X-Ray" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="X-Ray v3.1 - Across Devices" />
-  <meta property="og:description" content="World-anchored mixed-reality feed. Shared Reality rooms now work across phones. On-device camera." />
-  <meta property="og:image" content="https://x-ray.jonbailey.xyz/og.jpg?v=3.1.0" />
-  <meta property="og:image:secure_url" content="https://x-ray.jonbailey.xyz/og.jpg?v=3.1.0" />
+  <meta property="og:title" content="X-Ray 3.1.1 - Across Devices" />
+  <meta property="og:description" content="Spatial posts over live camera, on this device. Shared Reality rooms across phones. Camera frames are not uploaded." />
+  <meta property="og:image" content="https://x-ray.jonbailey.xyz/og.jpg?v=3.1.1" />
+  <meta property="og:image:secure_url" content="https://x-ray.jonbailey.xyz/og.jpg?v=3.1.1" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="X-Ray v3.1 Across Devices. Camera passthrough feed locked into the room." />
+  <meta property="og:image:alt" content="X-Ray 3.1.1 Across Devices. Spatial posts over live camera, on this device." />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@suddenlyjon" />
   <meta name="twitter:creator" content="@suddenlyjon" />
-  <meta name="twitter:title" content="X-Ray v3.1 - Across Devices" />
-  <meta name="twitter:description" content="Point your camera. Lock the feed in the room. Share a room across phones - never uploaded." />
-  <meta name="twitter:image" content="https://x-ray.jonbailey.xyz/og.jpg?v=3.1.0" />
-  <meta name="twitter:image:alt" content="X-Ray v3.1 - Across Devices" />
+  <meta name="twitter:title" content="X-Ray 3.1.1 - Across Devices" />
+  <meta name="twitter:description" content="Point your camera. Lock posts in the room. Camera frames are not uploaded." />
+  <meta name="twitter:image" content="https://x-ray.jonbailey.xyz/og.jpg?v=3.1.1" />
+  <meta name="twitter:image:alt" content="X-Ray 3.1.1 - Across Devices" />
 
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="icon" href="/icon-192.png" type="image/png" />
   <link rel="apple-touch-icon" href="/icon-192.png" />
-  <link rel="stylesheet" href="/assets/styles.css?v=3.1.0" />
+  <link rel="stylesheet" href="/assets/styles.css?v=3.1.1" />
 
   <script type="application/ld+json">
   {
@@ -53,18 +53,18 @@
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Any",
         "browserRequirements": "Requires JavaScript; camera and motion optional for full Anchored Reality",
-        "softwareVersion": "3.1.0",
-        "description": "World-anchored spatial X feed over live camera. Shared Reality rooms across devices. Demo Reality, on-device insights, local gallery. Privacy-first mixed reality.",
-        "image": "https://x-ray.jonbailey.xyz/og.jpg?v=3.1.0",
+        "softwareVersion": "3.1.1",
+        "description": "Spatial posts over live camera, on this device. Shared Reality rooms across devices. Demo Reality, on-device insights, local gallery.",
+        "image": "https://x-ray.jonbailey.xyz/og.jpg?v=3.1.1",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "creator": { "@type": "Person", "name": "suddenlyjon", "url": "https://x.com/suddenlyjon" }
       },
       {
         "@type": "WebPage",
-        "name": "X-Ray v3.1 - Across Devices",
+        "name": "X-Ray 3.1.1 - Across Devices",
         "url": "https://x-ray.jonbailey.xyz/",
         "isPartOf": { "@type": "WebSite", "name": "Jon Bailey Network", "url": "https://jonbailey.xyz/" },
-        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://x-ray.jonbailey.xyz/og.jpg?v=3.1.0", "width": 1200, "height": 630 }
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://x-ray.jonbailey.xyz/og.jpg?v=3.1.1", "width": 1200, "height": 630 }
       },
       {
         "@type": "FAQPage",
@@ -74,7 +74,7 @@
             "name": "Does video leave my phone?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. getUserMedia streams stay in the tab. Nothing is uploaded to a server by this site."
+              "text": "No. Camera frames stay in the tab. This site does not upload video, photos, or motion."
             }
           },
           {
@@ -82,7 +82,7 @@
             "name": "Why motion sensors?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Orientation stays on your phone so posts stay locked in the room. Nothing is sent. You can use scroll depth without sensors."
+              "text": "Orientation is processed on this device so posts can stay locked in the room. Sensor data is not sent. Scroll depth works without sensors."
             }
           },
           {
@@ -90,7 +90,15 @@
             "name": "Is this the same as x-ray.grok.me?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "This is the upgraded network host at x-ray.jonbailey.xyz with Anchored Reality. The original experimental app remains at x-ray.grok.me."
+              "text": "This is the Anchored Reality network host at x-ray.jonbailey.xyz. The original experimental app remains at x-ray.grok.me. This host does not fetch X."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use real X handles?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This host does not fetch X. Demo Reality uses sample posts. Vectors only stamp handle labels on those cards."
             }
           },
           {
@@ -98,7 +106,7 @@
             "name": "Do Shared Reality rooms work across phones?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes in v3.1. Signaling lives at xray-signal.jonbailey.xyz and stores SDP and ICE for two hours. Camera frames never leave the device. Same-browser tabs still work without the worker."
+              "text": "Yes. Signaling lives at xray-signal.jonbailey.xyz and stores SDP and ICE for two hours. Camera frames never go to the worker. Same-browser tabs still work without the worker."
             }
           }
         ]
@@ -124,15 +132,9 @@
             </svg>
           </div>
           <div class="brand-text">
-            <div class="eyebrow">X-Ray <span data-xray-version>v3.1.0</span></div>
+            <div class="eyebrow">X-Ray <span data-xray-version>v3.1.1</span></div>
             <div class="name">Across Devices</div>
           </div>
-        </div>
-        <div class="locale-row" role="group" aria-label="Language">
-          <button type="button" class="locale-btn" data-locale="en" aria-pressed="true">EN</button>
-          <button type="button" class="locale-btn" data-locale="es" aria-pressed="false">ES</button>
-          <button type="button" class="locale-btn" data-locale="pt" aria-pressed="false">PT</button>
-          <button type="button" class="locale-btn" data-locale="ja" aria-pressed="false">JA</button>
         </div>
       </header>
 
@@ -142,27 +144,27 @@
           <h1 class="hero-title" data-i18n="title">X-Ray</h1>
           <p class="hero-sub" data-i18n="sub">See your feed through reality.</p>
           <p class="hero-lede" data-i18n="lede">
-            World-anchored spatial feed over live camera. Posts lock into the room as you turn. Demo Reality, Shared Reality, on-device insights, local gallery - camera never leaves your device.
+            Spatial posts over live camera, on this device. Cards lock into the room as you turn. Demo Reality, Shared Reality rooms, on-device insights, local gallery. Camera frames are not uploaded.
           </p>
 
           <div class="cta-stack">
             <button type="button" class="btn btn-primary" id="btnDemo" data-i18n="demo">Try Demo Reality</button>
             <button type="button" class="btn btn-secondary" id="btnEnter" data-i18n="enter">Enter X-Ray</button>
-            <p class="privacy-note" data-i18n="privacy">Camera stays on-device. Captures never leave your browser.</p>
+            <p class="privacy-note" data-i18n="privacy">Camera stays on-device. Captures stay in this browser.</p>
           </div>
 
           <ul class="feature-list">
             <li class="feature-item">
               <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-              <span data-i18n="f1">Anchored Reality - posts stay fixed as you walk and turn</span>
+              <span data-i18n="f1">Anchored Reality - sample posts stay fixed as you walk and turn</span>
             </li>
             <li class="feature-item">
               <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
-              <span data-i18n="f2">Walk-safe chrome, multi-handle vectors, Shared Reality across devices</span>
+              <span data-i18n="f2">Walk-safe chrome, handle labels, Shared Reality rooms across devices</span>
             </li>
             <li class="feature-item">
               <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-              <span data-i18n="f3">On-device insight bubbles - optional private Grok key</span>
+              <span data-i18n="f3">On-device insight bubbles - optional private xAI key</span>
             </li>
             <li class="feature-item">
               <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
@@ -202,7 +204,7 @@
 
       <section class="section" aria-labelledby="how-title">
         <h2 class="section-title" id="how-title" data-i18n="sectionHow">How it works</h2>
-        <p class="section-lede" data-i18n="howLede">Point the camera. Lock the feed to the room. Scroll, capture, share from the device.</p>
+        <p class="section-lede" data-i18n="howLede">Point the camera. Lock the posts to the room. Scroll, capture, share from the device.</p>
         <div class="bento">
           <article class="bento-card">
             <h3 data-i18n="b1t">World lock</h3>
@@ -223,30 +225,30 @@
         <h2 class="section-title" id="faq-title" data-i18n="faqTitle">FAQ</h2>
         <details>
           <summary data-i18n="q1">Does video leave my phone?</summary>
-          <p data-i18n="a1">No. getUserMedia streams stay in the tab. Nothing is uploaded to a server by this site.</p>
+          <p data-i18n="a1">No. Camera frames stay in the tab. This site does not upload video, photos, or motion.</p>
         </details>
         <details>
           <summary data-i18n="q4">Why motion sensors?</summary>
-          <p data-i18n="a4">Orientation stays on your phone so posts stay locked in the room. Nothing is sent. You can use scroll depth without sensors.</p>
+          <p data-i18n="a4">Orientation is processed on this device so posts can stay locked in the room. Sensor data is not sent. Scroll depth works without sensors.</p>
         </details>
         <details>
           <summary data-i18n="q2">Is this the same as x-ray.grok.me?</summary>
-          <p data-i18n="a2">This is the upgraded network host (x-ray.jonbailey.xyz) with Anchored Reality. The original experimental app remains at x-ray.grok.me.</p>
+          <p data-i18n="a2">This is the Anchored Reality network host (x-ray.jonbailey.xyz). The original experimental app remains at x-ray.grok.me.</p>
         </details>
         <details>
           <summary data-i18n="q3">Can I use real X handles?</summary>
-          <p data-i18n="a3">Demo Reality uses sample posts. Enter handles in Vectors for labels; live API pulls are user-initiated on the original app path.</p>
+          <p data-i18n="a3">This host does not fetch X. Demo Reality uses sample posts. Vectors only stamp handle labels on those cards.</p>
         </details>
         <details>
           <summary data-i18n="q5">Do Shared Reality rooms work across phones?</summary>
-          <p data-i18n="a5">Yes in v3.1. Signaling at xray-signal.jonbailey.xyz stores SDP and ICE for two hours. Camera never leaves the device. Same-browser tabs still work locally.</p>
+          <p data-i18n="a5">Yes. Signaling at xray-signal.jonbailey.xyz stores SDP and ICE for two hours. Camera never goes to the worker. Same-browser tabs still work locally.</p>
         </details>
       </section>
 
       <footer class="footer">
         <p data-i18n="footer">Built in the spirit of @suddenlyjon · Pitchfork-and-Torch network host</p>
         <div class="footer-links">
-          <button type="button" class="linkish" id="btnWhatsNew" data-i18n="whatsNew">What's new in v3.1</button>
+          <button type="button" class="linkish" id="btnWhatsNew" data-i18n="whatsNew">What's new</button>
           <button type="button" class="linkish" id="btnPrivacy" data-i18n="privacyTitle">Privacy</button>
           <button type="button" class="linkish" id="btnChangelog" data-i18n="changelog">Changelog</button>
           <a href="https://x-ray.grok.me/">x-ray.grok.me</a>
@@ -254,7 +256,7 @@
           <a href="/llms.txt">llms.txt</a>
           <a href="https://jonbailey.xyz/">jonbailey.xyz</a>
         </div>
-        <p>MIT · <span data-xray-version>v3.0.1</span> · on-device only</p>
+        <p>MIT · <span data-xray-version>v3.1.1</span> · on-device only</p>
       </footer>
     </main>
 
@@ -342,14 +344,14 @@
             <label class="toggle-row"><span data-i18n="battery">Battery saver</span><input type="checkbox" id="setBattery" /></label>
             <label class="toggle-row"><span data-i18n="reduced">Reduced motion</span><input type="checkbox" id="setReduced" /></label>
             <label class="toggle-row"><span data-i18n="contrast">High contrast</span><input type="checkbox" id="setContrast" /></label>
-            <p class="privacy-note" style="margin-top:0.75rem;text-align:left" data-i18n="apiKeyHint">Optional xAI API key (client-only, for richer insights)</p>
+            <p class="privacy-note" style="margin-top:0.75rem;text-align:left" data-i18n="apiKeyHint">Optional xAI API key (stored in this browser; Enrich sends post text to api.x.ai only)</p>
             <input class="handles-input" id="apiKeyInput" type="password" autocomplete="off" placeholder="xai-..." />
             <div class="sheet-actions" style="margin-top:0.5rem">
               <button type="button" class="btn btn-secondary" id="btnSaveKey" data-i18n="saveKey">Save key</button>
               <button type="button" class="btn btn-ghost" id="btnClearKey" data-i18n="clearKey">Clear key</button>
             </div>
             <button type="button" class="btn btn-secondary" id="btnEnrichInsight" style="width:100%;margin-top:0.5rem" data-i18n="enrichInsight">Enrich insight</button>
-            <p class="privacy-note" style="margin-top:0.75rem" data-i18n="privacy">Camera stays on-device. Captures never leave your browser.</p>
+            <p class="privacy-note" style="margin-top:0.75rem" data-i18n="privacy">Camera stays on-device. Captures stay in this browser.</p>
           </div>
         </div>
 
@@ -363,7 +365,7 @@
               </button>
             </div>
             <div class="gallery-grid" id="galleryGrid"></div>
-            <p class="privacy-note" style="margin-top:0.75rem" data-i18n="neverUpload">Never uploaded - stays on this device</p>
+            <p class="privacy-note" style="margin-top:0.75rem" data-i18n="neverUpload">Not uploaded - stays on this device</p>
           </div>
         </div>
 
@@ -410,7 +412,7 @@
               <button type="button" class="btn btn-primary" id="btnDownload" data-i18n="download">Download</button>
               <button type="button" class="btn btn-secondary" id="btnShare" data-i18n="share">Share</button>
             </div>
-            <p class="privacy-note" style="margin-top:0.65rem" data-i18n="neverUpload">Never uploaded - stays on this device</p>
+            <p class="privacy-note" style="margin-top:0.65rem" data-i18n="neverUpload">Not uploaded - stays on this device</p>
           </div>
         </div>
       </div>
@@ -420,12 +422,12 @@
     <div class="sheet-backdrop landing-sheet" id="whatsNewSheet" aria-hidden="true">
       <div class="sheet" role="document">
         <div class="sheet-head">
-          <h2 data-i18n="whatsNew">What's new in v3.1</h2>
+          <h2 data-i18n="whatsNew">What's new</h2>
           <button type="button" class="icon-btn" data-close-sheet data-i18n-aria="close" aria-label="Close">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           </button>
         </div>
-        <p data-i18n="whatsNewBody">Shared Reality now signals across phones through xray-signal.jonbailey.xyz (SDP and ICE only, 2 hour TTL, never camera). Same-tab rooms still work locally. Anchored Reality, Moments, and on-device gallery stay as in v3.</p>
+        <p data-i18n="whatsNewBody">3.1.1 is a copy and version honesty pass. Shared Reality still signals across phones through xray-signal.jonbailey.xyz (SDP and ICE only, 2 hour TTL, never camera). Same-tab rooms still work locally. Camera frames stay on this device.</p>
         <div class="sheet-actions" style="margin-top:1rem">
           <button type="button" class="btn btn-primary" data-close-sheet data-i18n="close">Close</button>
         </div>
@@ -440,7 +442,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           </button>
         </div>
-        <p data-i18n="privacyBody">Camera, posts, and captures never leave this device unless you export or share a local file. No telemetry. No required accounts. Shared Reality rooms exchange SDP, ICE, handles, anchors, and reactions only. The signaling worker never sees video.</p>
+        <p data-i18n="privacyBody">This site does not upload camera frames, photos, or motion. Captures stay in this browser until you download or share a local file. No accounts. Shared Reality rooms exchange SDP, ICE, presence, and handle labels only - the signaling worker never sees video. If you save an xAI key and tap Enrich, post text goes to api.x.ai from your browser. A visit counter at hits.jonbailey.xyz records page loads, not camera.</p>
       </div>
     </div>
 
@@ -453,6 +455,11 @@
           </button>
         </div>
         <div class="changelog-body">
+          <h3>v3.1.1 - Honesty pass</h3>
+          <ul>
+            <li>Versions, PWA, and privacy copy match the shipped on-device app</li>
+            <li>This host does not fetch X; camera frames are not uploaded</li>
+          </ul>
           <h3>v3.1.0 - Across Devices</h3>
           <ul>
             <li>Live signaling worker at xray-signal.jonbailey.xyz</li>
@@ -498,7 +505,7 @@
     </div>
   </div>
 
-  <script type="module" src="/assets/app/main-v302.js?v=3.1.0" data-xray-main="1"></script>
+  <script type="module" src="/assets/app/main-v302.js?v=3.1.1" data-xray-main="1"></script>
   <script defer src="https://hits.jonbailey.xyz/c.js" data-site="x-ray"></script>
 </body>
 </html>

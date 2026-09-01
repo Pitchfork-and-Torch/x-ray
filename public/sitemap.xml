@@ -3,12 +3,12 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://x-ray.jonbailey.xyz/</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://x-ray.jonbailey.xyz/og.jpg</image:loc>
-      <image:title>X-Ray - See your feed through reality</image:title>
+      <image:title>X-Ray - spatial posts over live camera, on this device</image:title>
     </image:image>
   </url>
 </urlset>
