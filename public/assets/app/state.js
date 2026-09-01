@@ -1,5 +1,5 @@
 /* X-Ray v3 app state */
-export const VERSION = "3.1.0";
+export const VERSION = "3.1.1";
 
 export const STORAGE_KEY = "xray-v3-settings";
 export const LOCALE_KEY = "xray-v3-locale";

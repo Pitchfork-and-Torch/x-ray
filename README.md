@@ -1,15 +1,32 @@
-# X-Ray v3 - Anchored Reality
+# X-Ray 3.1.1 - Across Devices
 
 **See your feed through reality.**
 
-Privacy-first mixed-reality social feed: world-anchored posts over live camera passthrough, Demo Reality, Shared Reality data rooms, on-device insights, and a local gallery. Camera and captures never leave the device unless you export them.
+Spatial posts over live camera, on this device. World lock pins a depth stack of sample (or handle-labeled) cards in the room. Demo Reality, Shared Reality signaling rooms, on-device insights, and a local gallery. Camera frames and captures are not uploaded.
 
 - **Live:** https://x-ray.jonbailey.xyz/
 - **Signaling:** https://xray-signal.jonbailey.xyz/
 - **Original experimental app:** https://x-ray.grok.me/
 - **Concept:** [@suddenlyjon](https://x.com/suddenlyjon)
 - **License:** MIT
-- **Version:** 3.1.0
+- **Version:** 3.1.1
+
+## What's new in 3.1.1
+
+Honesty pass only. No new product features.
+
+- Versions, README, PWA, and AEO/privacy copy match the shipped app
+- This host does not fetch X
+- Shared Reality copy lists what the data channel actually sends (SDP/ICE, presence, handle labels)
+- Privacy copy states what is not uploaded, and the optional paths that can leave the browser
+- Missing `applyLocale` export restored so the module graph boots (EN only; locale fan-out still paused)
+- Stale footer `v3.0.1` and dead ES/PT/JA switcher removed
+
+## What's new in v3.1
+
+- **Across Devices** - Shared Reality rooms signal through `xray-signal.jonbailey.xyz`
+- Poll cursor so ICE candidates are not replayed
+- Guest-first, no accounts, no TURN daemon
 
 ## What's new in v3
 
@@ -23,20 +40,21 @@ Privacy-first mixed-reality social feed: world-anchored posts over live camera p
 
 See [CHANGELOG.md](./CHANGELOG.md) and design notes in [docs/X-RAY-V3-DESIGN.md](./docs/X-RAY-V3-DESIGN.md).
 
-## What's new in v3.1
-
-- **Across Devices** - Shared Reality rooms signal through `xray-signal.jonbailey.xyz`
-- Poll cursor so ICE candidates are not replayed
-- Guest-first, no accounts, no TURN daemon
-
 ## Privacy
 
-- `getUserMedia` streams stay in the browser tab
-- Motion sensors are processed on-device only
-- Captures live in IndexedDB / downloads on this device
-- Shared Reality syncs handles, anchors, and reactions - never video frames
-- No required accounts, no telemetry from this static host
-- Optional xAI key is stored only in your browser and sent only to api.x.ai when you tap Enrich
+This site does **not** upload:
+
+- Camera frames (`getUserMedia` stays in the tab)
+- Motion / orientation
+- Gallery stills or Moments
+
+What can leave the browser:
+
+- Shared Reality: SDP, ICE, presence, and handle labels (never video)
+- Optional Enrich: post text to `api.x.ai` only if you paste a key and tap Enrich
+- Visit counts on `hits.jonbailey.xyz` (page loads, not camera)
+
+No accounts. No TURN daemon. Signaling stores SDP and ICE only (2 hour TTL).
 
 ## Quick start
 
@@ -82,7 +100,7 @@ public/
   index.html
   assets/styles.css
   assets/app/          # ES modules
-    main.js
+    main-v302.js       # current entry
     sensors/           # orientation + fusion
     render/            # CSS 3D depth stack
     ...
@@ -91,6 +109,8 @@ workers/signal/        # optional ephemeral WebRTC signaling
 ```
 
 World lock uses CSS 3D transforms driven by sensor fusion (not Three.js). Sensors denied → enhanced scroll/pointer parallax.
+
+Public copy is EN-only while i18n fan-out is paused.
 
 ## Browser notes
 

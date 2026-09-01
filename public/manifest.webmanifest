@@ -1,7 +1,7 @@
 {
   "name": "X-Ray",
   "short_name": "X-Ray",
-  "description": "Anchored Reality: scroll your X feed through the room. Camera stays on-device.",
+  "description": "Spatial posts over live camera. Camera stays on this device.",
   "start_url": "/?xray=1",
   "display": "standalone",
   "background_color": "#000000",

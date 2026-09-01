@@ -54,7 +54,7 @@ export const DEMO_POSTS = [
     body: "LED rivers under bridges. Multi-handle vectors = multiple rooms in one view.",
     likes: "15.2K",
     reposts: "2.1K",
-    insight: "Open Vectors to stamp custom @handles. Shared Reality syncs anchors, never camera.",
+    insight: "Open Vectors to stamp custom @handles. Shared Reality syncs handles, never camera.",
     az: -28,
     el: -4,
     plane: "near",
