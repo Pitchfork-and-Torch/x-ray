@@ -9,7 +9,7 @@ Spatial posts over live camera, on this device. World lock pins a depth stack of
 - **Original experimental app:** https://x-ray.grok.me/
 - **Concept:** [@suddenlyjon](https://x.com/suddenlyjon)
 - **License:** MIT
-- **Version:** 3.1.1
+- **Version:** 3.1.1 (`VERSION` + [CHANGELOG.md](./CHANGELOG.md))
 
 ## What's new in 3.1.1
 
@@ -75,7 +75,7 @@ powershell -ExecutionPolicy Bypass -File .\deploy.ps1
 Cross-device rooms use the Worker in `workers/signal/` (live at https://xray-signal.jonbailey.xyz/).
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\x-ray\workers\signal\deploy.ps1
+powershell -ExecutionPolicy Bypass -File .\workers\signal\deploy.ps1
 ```
 
 Set the worker URL in `public/index.html` meta `xray-signal`. Without it, same-browser tabs still work via BroadcastChannel. The worker stores SDP and ICE only (2 hour TTL). No camera media.
@@ -108,7 +108,7 @@ public/
 workers/signal/        # optional ephemeral WebRTC signaling
 ```
 
-World lock uses CSS 3D transforms driven by sensor fusion (not Three.js). Sensors denied → enhanced scroll/pointer parallax.
+World lock uses CSS 3D transforms driven by sensor fusion (not Three.js). Sensors denied -> enhanced scroll/pointer parallax.
 
 Public copy is EN-only while i18n fan-out is paused.
 

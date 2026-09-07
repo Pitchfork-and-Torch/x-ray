@@ -10,7 +10,7 @@ Ephemeral WebRTC signaling for X-Ray Shared Reality.
 ## Deploy
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\x-ray\workers\signal\deploy.ps1
+powershell -ExecutionPolicy Bypass -File .\deploy.ps1
 ```
 
 Point the app meta tag `xray-signal` (or `window.__XRAY_SIGNAL__`) at the worker URL.

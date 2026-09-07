@@ -8,6 +8,8 @@
 - Restored missing `applyLocale` export so the ES module graph boots
 - Removed dead ES/PT/JA switcher (EN-only while i18n is paused)
 - Footer version rot (`v3.0.1`) fixed; PWA cache bumped to 3.1.1
+- Root `VERSION` file locked to 3.1.1 with this changelog
+- README signal deploy path is repo-relative (no home-directory path)
 
 ## 3.1.0 - Across Devices (2026-08-28)
 
