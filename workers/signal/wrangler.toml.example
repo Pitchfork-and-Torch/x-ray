@@ -1,0 +1,20 @@
+name = "xray-signal"
+main = "src/index.js"
+compatibility_date = "2026-08-28"
+workers_dev = true
+
+[[routes]]
+pattern = "xray-signal.example.com"
+custom_domain = true
+
+[[kv_namespaces]]
+binding = "ROOMS"
+id = "REPLACE_ME"
+
+[[durable_objects.bindings]]
+name = "ROOMS_DO"
+class_name = "RoomHub"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RoomHub"]
