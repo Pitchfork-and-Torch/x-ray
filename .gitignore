@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.wrangler/
+dist/
+*.log
+.env
+.env.*
+!.env.example
+
+.orbit/
+.wrangler/
+workers/signal/wrangler.toml

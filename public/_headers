@@ -1,0 +1,42 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(self), microphone=(), geolocation=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)
+  Cross-Origin-Resource-Policy: cross-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://hits.jonbailey.xyz; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self' https://api.x.ai https://*.jonbailey.xyz https://xray-signal.jonbailey.xyz https://cloudflareinsights.com https://hits.jonbailey.xyz; worker-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'self'
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/assets/app/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/og.jpg
+  Cache-Control: public, max-age=86400
+  Content-Type: image/jpeg
+
+/og.png
+  Cache-Control: public, max-age=86400
+
+/share-card.jpg
+  Cache-Control: public, max-age=86400
+
+/icon-*.png
+  Cache-Control: public, max-age=604800
+
+/llms.txt
+  Cache-Control: public, max-age=3600
+  Content-Type: text/plain; charset=utf-8
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Cache-Control: public, max-age=3600
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=3600
+  Content-Type: application/manifest+json
