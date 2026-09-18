@@ -5,6 +5,7 @@
 
 let listening = false;
 let lastCb = null;
+let absoluteSensor = null;
 
 function wrap180(deg) {
   let d = deg % 360;
@@ -66,10 +67,16 @@ export async function startOrientation(onPose) {
       const sensor = new AbsoluteOrientationSensor({ frequency: 60 });
       sensor.addEventListener("reading", onAbsoluteSensor(sensor));
       sensor.addEventListener("error", () => {
-        // fall through to deviceorientation
+        // Sensor failed after start: clear absolute flag so fallback can bind.
+        try {
+          sensor.stop();
+        } catch (_) {}
+        absoluteSensor = null;
+        listening = false;
         bindDeviceOrientation();
       });
       sensor.start();
+      absoluteSensor = sensor;
       listening = true;
       return { ok: true, mode: "absolute" };
     } catch (_) {
@@ -103,6 +110,12 @@ function bindDeviceOrientation() {
 }
 
 export function stopOrientation() {
+  if (absoluteSensor) {
+    try {
+      absoluteSensor.stop();
+    } catch (_) {}
+    absoluteSensor = null;
+  }
   if (listening) {
     window.removeEventListener("deviceorientation", onDeviceOrientation, true);
     listening = false;
