@@ -31,8 +31,20 @@ function wrapText(ctx, text, x, y, maxW, lineH, maxLines) {
 function drawStageToCanvas(canvas) {
   const stage = document.getElementById("arStage");
   const video = document.getElementById("arVideo");
+  if (!stage) {
+    canvas.width = 1;
+    canvas.height = 1;
+    return canvas;
+  }
   const w = stage.clientWidth;
   const h = stage.clientHeight;
+  // Hidden / zero-size stage made scale = canvas.width / 0 → Infinity and
+  // produced corrupt gallery stills / moments. Bail before divide-by-zero.
+  if (!w || !h) {
+    canvas.width = 1;
+    canvas.height = 1;
+    return canvas;
+  }
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   canvas.width = Math.max(1, Math.floor(w * dpr));
   canvas.height = Math.max(1, Math.floor(h * dpr));
