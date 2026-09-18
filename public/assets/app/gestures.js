@@ -49,6 +49,9 @@ export function bindGestures({ onDepthScale, root }) {
       (!state.lock.available || state.lock.status === "fallback" || !state.settings.worldLock)
     ) {
       const rect = el.getBoundingClientRect();
+      // Hidden / zero-size stage made nx/ny Infinity (distinct from capture
+      // drawStageToCanvas zero-size guard). Skip parallax until sized.
+      if (!rect.width || !rect.height) return;
       const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ny = ((e.clientY - rect.top) / rect.height) * 2 - 1;
       state.pointerParallax.x = Math.max(-1, Math.min(1, nx));
@@ -76,6 +79,8 @@ export function bindGestures({ onDepthScale, root }) {
     if (state.settings.reducedMotion) return;
     if (state.lock.status === "active" && state.lock.available && state.settings.worldLock) return;
     const rect = el.getBoundingClientRect();
+    // Same zero-size guard as pointer parallax above.
+    if (!rect.width || !rect.height) return;
     const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
     const ny = ((e.clientY - rect.top) / rect.height) * 2 - 1;
     state.pointerParallax.x = Math.max(-1, Math.min(1, nx)) * 0.6;
