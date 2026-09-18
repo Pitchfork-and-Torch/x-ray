@@ -37,8 +37,10 @@ export function ingestPose({ yaw, pitch }) {
   let dYaw = wrap180(yaw - state.lock.yaw0);
   let dPitch = pitch - state.lock.pitch0;
 
-  if (Math.abs(dYaw) < DEADZONE) dYaw = state.lock.filtYaw;
-  if (Math.abs(dPitch) < DEADZONE) dPitch = state.lock.filtPitch;
+  // Inside the calibrated deadzone, decay toward center — do not hold the
+  // last filtered offset (that left world-lock tilted after returning home).
+  if (Math.abs(dYaw) < DEADZONE) dYaw = 0;
+  if (Math.abs(dPitch) < DEADZONE) dPitch = 0;
 
   const a = state.settings.batterySaver ? ALPHA_SLOW : ALPHA_FAST;
   state.lock.filtYaw = state.lock.filtYaw * (1 - a) + dYaw * a;
