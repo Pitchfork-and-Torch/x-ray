@@ -72,11 +72,15 @@ export async function startOrientation(onPose) {
           sensor.stop();
         } catch (_) {}
         if (absoluteSensor === sensor) absoluteSensor = null;
+        // Absolute start must not set listening=true: that flag means a
+        // deviceorientation listener is attached. If it was set, this
+        // fallback skipped addEventListener and left orientation dead.
+        listening = false;
         bindDeviceOrientation();
       });
       sensor.start();
       absoluteSensor = sensor;
-      listening = true;
+      // Track absolute via absoluteSensor only; do not mark listening.
       return { ok: true, mode: "absolute" };
     } catch (_) {
       // continue
