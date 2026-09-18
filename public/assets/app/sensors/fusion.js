@@ -35,7 +35,9 @@ export function ingestPose({ yaw, pitch }) {
   if (state.lock.status === "off" || state.lock.status === "fallback") return;
 
   let dYaw = wrap180(yaw - state.lock.yaw0);
-  let dPitch = pitch - state.lock.pitch0;
+  // beta/pitch also wraps near ±180; raw subtraction swings ~360° and
+  // yanks world-lock. Same wrap as yaw (distinct from deadzone sticky-filt).
+  let dPitch = wrap180(pitch - state.lock.pitch0);
 
   if (Math.abs(dYaw) < DEADZONE) dYaw = state.lock.filtYaw;
   if (Math.abs(dPitch) < DEADZONE) dPitch = state.lock.filtPitch;
