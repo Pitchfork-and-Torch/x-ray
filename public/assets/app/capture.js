@@ -54,10 +54,24 @@ function drawStageToCanvas(canvas) {
   if (state.mode === "live" && video && video.readyState >= 2) {
     const vw = video.videoWidth;
     const vh = video.videoHeight;
-    const cover = Math.max(canvas.width / vw, canvas.height / vh);
-    const dw = vw * cover;
-    const dh = vh * cover;
-    ctx.drawImage(video, (canvas.width - dw) / 2, (canvas.height - dh) / 2, dw, dh);
+    // readyState>=2 does not guarantee non-zero frames (some browsers report
+    // HAVE_CURRENT_DATA before videoWidth/Height settle). Dividing by 0 made
+    // cover/dw/dh Infinity and wrote corrupt gallery stills — distinct from
+    // the zero-size stage guard above.
+    if (vw > 0 && vh > 0) {
+      const cover = Math.max(canvas.width / vw, canvas.height / vh);
+      const dw = vw * cover;
+      const dh = vh * cover;
+      ctx.drawImage(video, (canvas.width - dw) / 2, (canvas.height - dh) / 2, dw, dh);
+    } else {
+      const g = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      g.addColorStop(0, "#0a0c10");
+      g.addColorStop(1, "#000");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = `rgba(${state.ambient.r},${state.ambient.g},${state.ambient.b},0.15)`;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
   } else {
     const g = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
     g.addColorStop(0, "#0a0c10");
