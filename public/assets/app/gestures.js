@@ -68,7 +68,8 @@ export function bindGestures({ onDepthScale, root }) {
   el.addEventListener("pointermove", onMove);
   el.addEventListener("pointerup", onUp);
   el.addEventListener("pointercancel", onUp);
-  el.addEventListener("pointerleave", onUp);
+  // Do not end gestures on pointerleave: setPointerCapture keeps the drag
+  // alive outside the stage; leave would drop the pointer mid-pinch/drag.
 
   // desktop mouse move for parallax without press
   function onMouseMove(e) {
@@ -80,14 +81,19 @@ export function bindGestures({ onDepthScale, root }) {
     state.pointerParallax.x = Math.max(-1, Math.min(1, nx)) * 0.6;
     state.pointerParallax.y = Math.max(-1, Math.min(1, ny)) * 0.6;
   }
+  function onMouseLeave() {
+    state.pointerParallax.x = 0;
+    state.pointerParallax.y = 0;
+  }
   el.addEventListener("mousemove", onMouseMove);
+  el.addEventListener("mouseleave", onMouseLeave);
 
   return () => {
     el.removeEventListener("pointerdown", onDown);
     el.removeEventListener("pointermove", onMove);
     el.removeEventListener("pointerup", onUp);
     el.removeEventListener("pointercancel", onUp);
-    el.removeEventListener("pointerleave", onUp);
     el.removeEventListener("mousemove", onMouseMove);
+    el.removeEventListener("mouseleave", onMouseLeave);
   };
 }
