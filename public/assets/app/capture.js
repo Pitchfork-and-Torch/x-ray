@@ -34,7 +34,9 @@ function drawStageToCanvas(canvas) {
   if (!stage) {
     canvas.width = 1;
     canvas.height = 1;
-    return canvas;
+    // Signal caller: do not gallery-save this placeholder (distinct from the
+    // divide-by-zero guard itself, which only prevented Infinity scale).
+    return null;
   }
   const w = stage.clientWidth;
   const h = stage.clientHeight;
@@ -43,7 +45,8 @@ function drawStageToCanvas(canvas) {
   if (!w || !h) {
     canvas.width = 1;
     canvas.height = 1;
-    return canvas;
+    // Same skip-save signal as missing stage above.
+    return null;
   }
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   canvas.width = Math.max(1, Math.floor(w * dpr));
@@ -131,7 +134,12 @@ function drawStageToCanvas(canvas) {
 
 export async function captureStill() {
   const canvas = document.createElement("canvas");
-  drawStageToCanvas(canvas);
+  // drawStageToCanvas returns null when the stage is missing/zero-size so we
+  // do not putCapture a 1×1 placeholder into the gallery (the zero-size guard
+  // alone still left a corrupt still on disk).
+  if (!drawStageToCanvas(canvas)) {
+    return null;
+  }
   const dataUrl = canvas.toDataURL("image/png");
   const id = Date.now();
   await putCapture({
@@ -153,7 +161,10 @@ export function momentsSupported() {
 export async function captureMoment(seconds = 3, onTick) {
   const secs = Math.max(2, Math.min(6, seconds || state.settings.momentSeconds || 3));
   const canvas = document.createElement("canvas");
-  drawStageToCanvas(canvas);
+  // Same skip-save as captureStill: zero-size stage must not record a 1×1 moment.
+  if (!drawStageToCanvas(canvas)) {
+    return null;
+  }
   const stream = canvas.captureStream(state.settings.batterySaver ? 24 : 30);
   const mimeCandidates = [
     "video/webm;codecs=vp9",
