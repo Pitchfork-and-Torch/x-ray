@@ -36,6 +36,10 @@ export async function startCamera() {
     await video.play().catch(() => {});
     return { ok: true };
   } catch (_) {
+    // getUserMedia may have succeeded before bind failed (missing video node,
+    // play rejection race). Stop tracks so a failed start never leaves the
+    // camera hot under state.stream.
+    stopCamera();
     return { ok: false, reason: "denied" };
   }
 }
