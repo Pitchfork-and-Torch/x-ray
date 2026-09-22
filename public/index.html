@@ -39,8 +39,8 @@
 
   <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="icon" href="/icon-192.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/icon-192.png" />
-  <link rel="stylesheet" href="/assets/styles.css?v=3.2.0" />
+  <link rel="apple-touch-icon" href="/icon-512.png" sizes="512x512" />
+  <link rel="stylesheet" href="/assets/styles.css?v=3.2.0b" />
 
   <script type="application/ld+json">
   {
@@ -116,6 +116,7 @@
   </script>
 </head>
 <body>
+  <a class="skip" href="#landing">Skip to content</a>
   <div class="app-shell">
     <div class="bg-layer" aria-hidden="true">
       <div class="bg-mesh"></div>
@@ -248,9 +249,9 @@
       <footer class="footer">
         <p data-i18n="footer">Built in the spirit of @suddenlyjon · Pitchfork-and-Torch network host</p>
         <div class="footer-links">
-          <button type="button" class="linkish" id="btnWhatsNew" data-i18n="whatsNew">What's new</button>
-          <button type="button" class="linkish" id="btnPrivacy" data-i18n="privacyTitle">Privacy</button>
-          <button type="button" class="linkish" id="btnChangelog" data-i18n="changelog">Changelog</button>
+          <button type="button" class="linkish" id="btnWhatsNew" aria-haspopup="dialog" aria-controls="whatsNewSheet" data-i18n="whatsNew">What's new</button>
+          <button type="button" class="linkish" id="btnPrivacy" aria-haspopup="dialog" aria-controls="privacySheet" data-i18n="privacyTitle">Privacy</button>
+          <button type="button" class="linkish" id="btnChangelog" aria-haspopup="dialog" aria-controls="changelogSheet" data-i18n="changelog">Changelog</button>
           <a href="https://x-ray.grok.me/">x-ray.grok.me</a>
           <a href="https://github.com/Pitchfork-and-Torch/x-ray">GitHub</a>
           <a href="/llms.txt">llms.txt</a>

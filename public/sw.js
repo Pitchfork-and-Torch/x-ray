@@ -4,7 +4,7 @@ const CACHE = "xray-v3.2.0";
 const PRECACHE = [
   "/",
   "/index.html",
-  "/assets/styles.css?v=3.2.0",
+  "/assets/styles.css?v=3.2.0b",
   "/assets/app/main-v302.js?v=3.2.0",
   "/manifest.webmanifest",
   "/icon-192.png",
