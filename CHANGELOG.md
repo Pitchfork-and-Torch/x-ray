@@ -1,0 +1,76 @@
+# Changelog
+
+## 4.0.0 - Grounded Reality (2026-09-24)
+
+- Place Memory: named rooms in IndexedDB (`xray-v3` version 2, store `places`). Gallery stills and Moments are not wiped.
+- Feed Bay: local import of JSON, NDJSON, markdown, or an X archive file. This host does not fetch X.
+- Shared Reality 3.0: v4 anchors, ghost cards, and reactions on the data channel. v3 presence still accepted. Same-tab BroadcastChannel fallback unchanged.
+- Signaling worker still stores SDP and ICE only. Anchors sync only while the data channel is up. No TURN daemon.
+- Surface pins, creator notes, and Local Pulse fields for feed, places, room, and signal.
+- WebXR plane hit-test is optional and never required. CSS 3D world lock stays the default.
+
+## 3.2.0 - Local Pulse (2026-09-12)
+
+- On-device Local Pulse panel: app version, PWA cache name, camera permission state
+- Camera frames still never leave the browser
+- Version lockstep test (`scripts/test_version_lockstep.js`)
+- Shared Reality join fail-closed: a live Worker 404 is a missing room, not a silent local join
+- Signal worker: POST /signal 404s on unknown rooms, monotonic ICE stamps, first answer wins. No X API.
+- KV reads omit illegal cacheTtl 0 (Workers KV minimum is 30s) so live GET/POST no longer 500
+- Each ICE/answer is its own storage key so a cached list cannot drop the second candidate
+- Room signaling uses a Durable Object (RoomHub) so append and poll are strongly consistent. No X API.
+
+## 3.1.1 - Honesty pass (2026-09-01)
+
+- Versions, README, PWA, and AEO/privacy copy match the shipped on-device app
+- Copy no longer claims a live X feed, Shared Reality anchor/reaction sync, or "no telemetry"
+- Privacy text lists what is not uploaded (camera, photos, motion) and the optional paths that can leave the browser
+- Restored missing `applyLocale` export so the ES module graph boots
+- Removed dead ES/PT/JA switcher (EN-only while i18n is paused)
+- Footer version rot (`v3.0.1`) fixed; PWA cache bumped to 3.1.1
+- Root `VERSION` file locked to 3.1.1 with this changelog
+- README signal deploy path is repo-relative (no home-directory path)
+
+## 3.1.0 - Across Devices (2026-08-28)
+
+- Live Cloudflare Worker signaling at https://xray-signal.jonbailey.xyz/
+- Shared Reality rooms work across phones (SDP + ICE only, 2 hour TTL)
+- Same-tab BroadcastChannel fallback unchanged
+- Camera and captures still never leave the device
+
+## 3.0.0 - Anchored Reality (2026-07-31)
+
+### Core
+
+- **World lock** using DeviceOrientation / AbsoluteOrientationSensor with iOS permission gesture
+- **Re-anchor** control resets spatial origin
+- Lock badge: WORLD LOCK / SCROLL DEPTH / CALIBRATING
+- Graceful **scroll + pointer parallax** when sensors missing or denied
+- **Ambient tint** from live camera average color
+
+### Capture & storage
+
+- Gallery moved to **IndexedDB** (migrates v2 localStorage stills)
+- **Moments**: short on-device AR clips via MediaRecorder (2-6s, default 3s)
+- Watermark: `X-Ray v3 · on-device`
+
+### Shared Reality 2.0
+
+- Optional WebRTC **data-channel** rooms (handles, presence, reactions)
+- Ephemeral invite codes / `?room=CODE`
+- Optional `xray-signal` Cloudflare Worker for cross-device SDP; BroadcastChannel local fallback
+- No camera/video sharing
+
+### Insights & polish
+
+- Local heuristic insight bubbles (long-press / double-tap)
+- Optional **client-only** xAI API key for richer insights
+- Pinch to scale depth separation
+- Spatial audio cues (off by default)
+- Onboarding, What's new, Privacy, Changelog sheets
+- ES modules under `public/assets/app/`
+- PWA cache bump to v3.0.0
+
+## 2.0.0
+
+- Responsive network host, EN/ES/PT/JA, walk-safe chrome, Demo Reality, local still gallery, PWA shell

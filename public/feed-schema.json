@@ -1,0 +1,12 @@
+{
+  "name": "Display name",
+  "handle": "@handle",
+  "body": "text",
+  "likes": 0,
+  "reposts": 0,
+  "insight": "",
+  "az": 0,
+  "el": 0,
+  "plane": "mid",
+  "theme": "default"
+}
