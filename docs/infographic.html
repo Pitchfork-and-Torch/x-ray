@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>X-Ray 4.0.1</title>
+  <style>
+    :root {
+      --ink: #e8f4ff;
+      --muted: #9fb4c9;
+      --cyan: #7ee0ff;
+      --line: rgba(160, 210, 255, 0.22);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #070712; }
+    .canvas {
+      width: 1200px;
+      height: 1080px;
+      padding: 64px 72px 56px;
+      color: var(--ink);
+      font-family: "Satoshi", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(900px 520px at 18% 8%, rgba(56, 120, 180, 0.35), transparent 70%),
+        radial-gradient(800px 640px at 92% 78%, rgba(92, 36, 140, 0.45), transparent 68%),
+        linear-gradient(160deg, #0b1220 0%, #12081c 100%);
+    }
+    .chip {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--cyan);
+      font-family: "Clash Display", "Satoshi", "Segoe UI", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      font-size: 18px;
+    }
+    h1 {
+      margin: 28px 0 12px;
+      font-family: "Clash Display", "Satoshi", "Segoe UI", sans-serif;
+      font-weight: 600;
+      font-size: 84px;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+    .lede {
+      max-width: 920px;
+      margin: 0 0 40px;
+      color: var(--muted);
+      font-size: 28px;
+      line-height: 1.35;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 26px;
+    }
+    th, td {
+      text-align: left;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      color: var(--cyan);
+      font-family: "Clash Display", "Satoshi", "Segoe UI", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+    }
+    td.kept { color: var(--ink); }
+    .note {
+      margin-top: 36px;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      font-size: 24px;
+      line-height: 1.4;
+    }
+    .note strong {
+      font-family: "Clash Display", "Satoshi", "Segoe UI", sans-serif;
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    footer {
+      margin-top: 36px;
+      color: var(--muted);
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  <article class="canvas">
+    <div class="chip">X-RAY 4.0.1</div>
+    <h1>Room fields only.</h1>
+    <p class="lede">A Shared Reality message keeps the fields that type uses. Extra keys are dropped before this app applies them.</p>
+    <table>
+      <thead>
+        <tr><th>TYPE</th><th>KEPT</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>presence, handles</td><td class="kept">peer id, handles, time</td></tr>
+        <tr><td>anchor, place, ghost, note</td><td class="kept">origin, short cards, place name</td></tr>
+        <tr><td>reaction</td><td class="kept">card id, short mark</td></tr>
+        <tr><td>bye</td><td class="kept">peer id, time</td></tr>
+      </tbody>
+    </table>
+    <p class="note"><strong>Still true.</strong> Camera frames stay on this device. The signal worker stores SDP and ICE only. Anchors sync while the data channel is up.</p>
+    <footer>x-ray.jonbailey.xyz</footer>
+  </article>
+</body>
+</html>
